@@ -79,7 +79,7 @@ map.on("load", () => {
                 }
             });
 
-            // ✅ Apply the default filter when the map loads
+            // Apply the default filter when the map loads
             filterCrashes();
         }
     );
@@ -90,7 +90,8 @@ map.on("load", () => {
         // Extract and format new properties and add icons for decoration
         const alcoholInvolved = properties.ALCOHOL === "Yes" ? "✅ Yes" : "❌ No";
         const aggravatedDriving = properties.AG_DRIV === "Yes" ? "✅ Yes" : "❌ No"; // Alcohol and AGDrive data is boolean
-    
+        
+        // add cool emojii for style in alias
         const popupContent = `
             <div class="popup-content">
                 <strong>🚴 Crash Summary</strong><br>
