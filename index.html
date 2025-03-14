@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Bike Accident Directory</title>
+
+    <!-- Mapbox GL JS & Styles -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css" rel="stylesheet">
+
+    <!-- import font families-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <img src="bikecrashes.png" alt="Bike Crashes" class="header-img left">
+        <h1>Toronto Bike Accident Directory</h1>
+        <img src="bikecrashes.png" alt="Bike Crashes" class="header-img right">
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-container">
+        <!-- Map Section -->
+        <div id="my-map" class="map-container"></div>
+
+        <!-- Guide Section -->
+        <div class="guide-container">
+            <h2>This map shows fatal crashes on Toronto streets and designated bike paths.</h2>
+            <ul>
+                <li>Always wear a helmet and visible clothing.</li>
+                <li>Use bike lanes where available.</li>
+                <li>Obey all traffic signals and signs.</li>
+                <li>Be cautious of parked cars and door zones.</li>
+                <li>Use hand signals when turning or stopping.</li>
+                <li>Make eye contact with drivers at intersections.</li>
+            </ul>
+
+            <!-- Buttons for External Resources -->
+            <a href="https://www.youtube.com/watch?v=d0sq-RQQ04c" target="_blank" class="btn">
+                🎥 Watch Bike Safety Video
+            </a>
+            <a href="https://www.nytimes.com/wirecutter/reviews/best-bike-helmet-for-commuters/" target="_blank"
+                class="btn">
+                🛒 Best Bike Helmets Guide
+            </a>
+            <!-- Filter & Legend Information -->
+            <div class="filter-info">
+                <h3>How to Use the Map Filters & Legend</h3>
+                <p>
+                    Use the <strong>Year Slider</strong> to filter crashes by year. Drag the slider left or right to
+                    update
+                    the map to show crashes from a specific year.
+                </p>
+                <p>You can view <strong>Crash Info</strong> by clicking on the bicycle icons to see detailed profile of
+                    the event.</p>
+                <p>
+                    Click the <strong>Filter Buttons</strong> to adjust the crash data displayed on the map:
+                </p>
+                <ul>
+                    <li><b>Show All:</b> Displays all recorded crashes.</li>
+                    <li><b>Show Fatal:</b> Filters to only show crashes that resulted in fatalities.</li>
+                    <li><b>Show Non-Fatal:</b> Displays only crashes that resulted in injuries.</li>
+                </ul>
+                <p>
+                    The <strong>Legend</strong> at the bottom-left of the map provides a count of crashes based on the
+                    selected filters. The total number of crashes updates dynamically as you change the filters.
+                </p>
+            </div>
+        </div>
+
+        <!-- Year Slider Overlay -->
+        <div class="map-overlay">
+            <div class="map-overlay-inner">
+                <h2>Filter Crashes by Year</h2>
+                <label id="selected-year">2023</label>
+                <input id="year-slider" type="range" min="2018" max="2023" step="1" value="2023">
+            </div>
+        </div>
+    </div>
+
+    <!-- Legend Section -->
+    <div class="legend-container">
+        <h3>Crash Data</h3>
+
+        <!-- Total crash count -->
+        <p>Total Crashes in <span id="selected-year-text">2023</span>: <strong id="total-crashes">0</strong></p>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button id="show-all" class="active">Show All</button>
+            <button id="show-fatal">Show Fatal</button>
+            <button id="show-nonfatal">Show Non-Fatal</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

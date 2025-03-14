@@ -1,0 +1,246 @@
+/* Reset default margins and padding. formatting taken from ChatGPT */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Fix Header Width & Overflow */
+.header {
+    width: 100%;
+    max-width: 100vw; /* ✅ Ensures no horizontal scroll */
+    height: 160px;
+    background: #007cbf;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box; /* ✅ Prevents extra padding from increasing width */
+    overflow: hidden; /* ✅ Prevents elements from overflowing */
+}
+
+/* Header Title */
+.header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    flex-grow: 1; /* Ensures the title is centered */
+    margin: 0;
+    color: white;
+}
+
+.header-img {
+    max-width: 80px; /* ✅ Adjust if needed */
+    height: auto;
+    object-fit: contain;
+}
+
+.header-img.left {
+    align-self: center;
+    margin-left: 10px; /* ✅ Prevents icon from touching screen edge */
+}
+
+.header-img.right {
+    align-self: center;
+    margin-right: 10px; /* ✅ Prevents icon from touching screen edge */
+}
+
+/* Main content layout */
+.main-container {
+    display: flex;
+    height: calc(100vh - 150px); /* Adjusted to match the header height */
+}
+
+/* Map Section (Left) */
+.map-container {
+    flex: 2;  /* Takes 2/3 of available space on page*/
+    height: 100%;
+}
+
+/* Guide Section (Right) */
+.guide-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    flex: 1;  /* Takes 1/3 of available space on page */
+    background-color: #f8f9fa;
+    padding: 30px;
+    overflow-y: auto; /* Enables scrolling if content overflows */
+}
+
+/* Increase spacing between points in the guide */
+.guide-container ul {
+    list-style-type: disc; /* Default bullet points */
+    padding-left: 20px;
+}
+
+.guide-container li {
+    margin-bottom: 15px; /* Increased spacing between points */
+    font-size: 1.1em; /* Slightly larger text for readability */
+}
+
+/* Optional: Make links inside the guide more visible */
+.guide-container a {
+    color: #fafafa;
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    background-color: #007cbf; /* Blue button */
+    color: white;
+    padding: 12px 20px;
+    margin-top: 15px; /* Adds space between list and buttons */
+    margin-right: 10px; /* Adds spacing between buttons */
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #005f8a; /* Darker blue on hover */
+}
+
+/* Overlay for slider */
+.map-overlay {
+    font: 14px/20px 'Helvetica Neue', Arial, sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 220px;
+    background-color: white;
+    padding: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+/* Styling for the slider */
+#year-slider {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #007cbf; /* Custom color for the slider thumb */
+}
+
+/* Bold selected year text */
+#selected-year {
+    font-weight: bold;
+    color: #007cbf;
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.legend-container {
+    position: absolute;
+    bottom: 20px; /* Moves it to the bottom */
+    left: 300px; /* Moves it to the right */
+    background: white;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    text-align: center;
+    z-index: 10; /* Ensures it stays above the map */
+}
+
+.legend-container h3 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0 5px;
+    font-size: 14px;
+}
+
+.legend-container p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.filter-buttons button {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: none;
+    background-color: #007cbf;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.filter-buttons button:hover {
+    background-color: #005f8a;
+}
+
+.filter-buttons button.active {
+    background-color: #ff9800; /* Highlight active button */
+}
+
+/* Custom Popup Styling */
+.mapboxgl-popup {
+    max-width: 280px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mapboxgl-popup-content {
+    background: white;
+    color: black;
+    border: 2px solid black; /* Adds black border */
+    border-radius: 6px; /* Rounded corners */
+    padding: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styling for the content inside the popup */
+.popup-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Style for the close button */
+.mapboxgl-popup-close-button {
+    font-size: 16px;
+    color: black;
+}
+
+/* Filter Info Section */
+.filter-info {
+    background: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    color: #007cbf;
+    margin-bottom: 10px;
+}
+
+.filter-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+}
+
+.filter-info ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.filter-info li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
