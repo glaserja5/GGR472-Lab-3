@@ -7,8 +7,7 @@ Features:
 **Year Slider** to filter crashes by year  
 **Fatal & Non-Fatal Crash Filters**  
 **Dynamic Popup with Crash Details**  
-**Legend with Real-Time Crash Count**  
-**Responsive Design & Dark Mode** *(Optional)*  
+**Legend with Real-Time Crash Count**   
 
 
 Notes:
