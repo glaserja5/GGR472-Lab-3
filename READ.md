@@ -1,4 +1,16 @@
-Webpage of bike collisions and bike paths in toronto. Rough webmap that could use some more filters to sort through lots of data points on the map. 
+# 🚲 Toronto Bike Accident Directory
+
+This interactive map visualizes **fatal and non-fatal bike crashes in Toronto**, allowing users to filter data by **year and fatality** and see more detailed info about individual crashes by interacting with points. The goal of this project is to raise awareness about bike safety and provide useful insights into accident hotspots.
+
+Features:
+**Interactive Map** powered by **Mapbox**  
+**Year Slider** to filter crashes by year  
+**Fatal & Non-Fatal Crash Filters**  
+**Dynamic Popup with Crash Details**  
+**Legend with Real-Time Crash Count**  
+**Responsive Design & Dark Mode** *(Optional)*  
 
 
-I dont know why the geojson data wont load in the github link but it does when you open from VSCode... Maybe it fixes itself in a few days but who knows im very confused!?
+Notes:
+- When applying filters, wait for data to refresh to update crash counts in legend. 
+- Data points also do not appear at distant. Must zoom in to render data points in mapbox.
