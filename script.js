@@ -27,7 +27,7 @@ map.on("load", () => {
     // Load bike route data
     map.addSource("bike-routes", {
         type: "geojson",
-        data: "https://glaserja5.github.io/Lab-2-GGR472/data/bikeroutes.geojson"
+        data: "https://glaserja5.github.io/GGR472-Lab-3/data/bikeroutes.geojson"
     });
 
     // Load crash data from Mapbox tileset
@@ -53,7 +53,7 @@ map.on("load", () => {
 
     // Load cyclist bike icon from GitHub
     map.loadImage(
-        "https://raw.githubusercontent.com/glaserja5/Lab-2-GGR472/main/bike-svgrepo-com.png",
+        "https://raw.githubusercontent.com/glaserja5/GGR472-Lab-3/main/bike-svgrepo-com.png",
         (error, image) => {
             if (error) throw error;
             map.addImage("cyclist-icon", image);
